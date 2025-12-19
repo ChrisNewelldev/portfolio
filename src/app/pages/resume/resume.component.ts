@@ -1,18 +1,33 @@
+/**
+ * Author: Chris Newell
+ * Date: 2025-12-19
+ * File: resume.component.ts
+ */
+
 import { Component } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [],
   templateUrl: './resume.component.html',
-  styleUrl: './resume.component.css'
+  styleUrls: ['./resume.component.css'],
 })
 export class ResumeComponent {
-  // Uses the app's <base href> so the link works both locally and on GitHub Pages (e.g., /portfolio/)
-public readonly resumeHref: string = (() => {
-  const baseEl = document.querySelector('base');
-  const baseHref = baseEl?.getAttribute('href') ?? '/';
-  const normalized = baseHref.endsWith('/') ? baseHref : `${baseHref}/`;
-  return `${normalized}resume.pdf`;
-})();
+  resumeHref = '/resume.pdf';
+  safeResumeUrl: SafeResourceUrl;
+
+  showPreview = true;
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.safeResumeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.resumeHref);
+  }
+
+  togglePreview(): void {
+    this.showPreview = !this.showPreview;
+  }
+
+  get previewButtonLabel(): string {
+    return this.showPreview ? 'Hide preview' : 'Show preview';
+  }
 }

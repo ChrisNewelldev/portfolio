@@ -1,0 +1,64 @@
+/*
+  Author: Chris Newell
+  Date: 2025-12-19
+  File: resume.component.css
+*/
+
+.resume-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.resume-title h1 {
+  margin-bottom: 0.35rem;
+}
+
+.resume-subtitle {
+  margin: 0;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Preview container with a simple toggle animation */
+.resume-preview {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(15, 27, 51, 0.45);
+  overflow: hidden;
+
+  /* animation */
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: max-height 240ms ease, opacity 180ms ease, transform 180ms ease;
+}
+
+.resume-preview.is-open {
+  max-height: 100vh; /* plenty for the iframe */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.resume-preview-inner {
+  padding: 0.85rem;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 70vh;
+  border: 0;
+  display: block;
+  border-radius: 10px;
+}
+
+.resume-fallback {
+  margin: 0.85rem 0 0;
+}

@@ -5,23 +5,41 @@
   File: styles.css
 */
 
+/* ================================
+   Global theme (dark-mode polish)
+================================ */
+
 :root {
+  /* Surfaces */
   --bg: #0b1220;
-  --text: #e7edf7;
-  --muted: #a7b3c9;
+  --surface: rgba(18, 34, 69, 0.78);
+  --surface-2: rgba(15, 27, 51, 0.78);
   --border: rgba(231, 237, 247, 0.14);
 
+  /* Text */
+  --text: #e7edf7;
+  --muted: #a7b3c9;
+
+  /* Accent system */
   --accent: #6ee7ff;
   --accent-2: #a78bfa;
+  --accent-soft: rgba(110, 231, 255, 0.18);
+  --accent-2-soft: rgba(167, 139, 250, 0.18);
 
+  /* UI */
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-
   --radius: 16px;
   --radius-sm: 12px;
 
+  /* Layout */
   --max: 980px;
+
+  /* Typography */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
 }
 
+/* Base reset */
 *,
 *::before,
 *::after {
@@ -35,14 +53,19 @@ body {
 
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-    "Apple Color Emoji", "Segoe UI Emoji";
-  background:
-    radial-gradient(1200px 800px at 10% 10%, rgba(167, 139, 250, 0.18), transparent 55%),
-    radial-gradient(1200px 800px at 90% 0%, rgba(110, 231, 255, 0.16), transparent 55%),
-    var(--bg);
+  font-family: var(--font);
+  line-height: 1.6;
   color: var(--text);
-  line-height: 1.55;
+  background:
+    radial-gradient(1200px 800px at 10% 10%, var(--accent-2-soft), transparent 55%),
+    radial-gradient(1200px 800px at 90% 0%, var(--accent-soft), transparent 55%),
+    var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(110, 231, 255, 0.28);
 }
 
 img {
@@ -60,11 +83,7 @@ a:hover {
   text-decoration-color: rgba(110, 231, 255, 0.7);
 }
 
-p {
-  color: var(--muted);
-  margin: 0 0 0.9rem;
-}
-
+/* Type scale */
 h1,
 h2,
 h3 {
@@ -73,12 +92,20 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 3vw, 2.6rem);
   line-height: 1.15;
 }
 
 h2 {
   font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+}
+
+strong {
   color: var(--text);
 }
 
@@ -87,6 +114,7 @@ ul {
   color: var(--muted);
 }
 
+/* Layout helpers */
 .container {
   width: 100%;
   max-width: var(--max);
@@ -94,14 +122,16 @@ ul {
   padding: 1.25rem;
 }
 
+/* Card */
 .card {
-  background: linear-gradient(180deg, rgba(18, 34, 69, 0.85), rgba(15, 27, 51, 0.85));
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1.25rem;
 }
 
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -110,9 +140,9 @@ ul {
   padding: 0.7rem 0.95rem;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(18, 34, 69, 0.65);
+  background: rgba(18, 34, 69, 0.6);
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: none;
 }
@@ -122,11 +152,17 @@ ul {
   border-color: rgba(110, 231, 255, 0.45);
 }
 
+.btn:focus-visible {
+  outline: 2px solid rgba(110, 231, 255, 0.55);
+  outline-offset: 2px;
+}
+
 .btn-primary {
   background: linear-gradient(135deg, rgba(110, 231, 255, 0.26), rgba(167, 139, 250, 0.22));
   border-color: rgba(110, 231, 255, 0.35);
 }
 
+/* Badge */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -137,6 +173,7 @@ ul {
   font-size: 0.85rem;
 }
 
+/* Header / footer */
 .site-header {
   position: sticky;
   top: 0;
@@ -146,18 +183,28 @@ ul {
   border-bottom: 1px solid var(--border);
 }
 
-.site-header .container {
+/* use a dedicated class so we don't accidentally affect every .container */
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
 }
 
 .brand-link {
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.home-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  color: var(--text);
 }
 
 .nav {
@@ -171,7 +218,7 @@ ul {
   border-radius: 999px;
   border: 1px solid transparent;
   color: var(--muted);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .nav a:hover {
@@ -194,8 +241,18 @@ ul {
   text-align: center;
 }
 
+/* Motion safety */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Responsive */
 @media (max-width: 520px) {
-  .site-header .container {
+  .header-inner {
     flex-direction: column;
     align-items: flex-start;
   }

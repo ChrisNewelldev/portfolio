@@ -1,18 +1,34 @@
-<section>
+<!--
+  Author: Chris Newell
+  Date: 2025-12-19
+  File: projects.component.html
+-->
+
+<section class="card">
   <h1>Projects</h1>
 
   <p>
     Selected coursework and portfolio projects completed as part of my B.S. in Web Development program at Bellevue University.
   </p>
-  <p>Note: Some coursework projects are organized within course repositories; links may point to a specific project folder within a repo.</p>
+  <p>
+    Note: Some coursework projects are organized within course repositories; links may point to a specific project folder within a repo.
+  </p>
 
   <div class="project">
     <h2>Personal Portfolio (Angular)</h2>
-    <p>
-      A simple portfolio site built with Angular to showcase coursework, a resume download, and basic routing.
+
+    <p class="tags">
+      <span class="tag">Angular</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">GitHub Pages</span>
     </p>
-    <p><strong>Tech:</strong> Angular, TypeScript, HTML, CSS, GitHub Pages</p>
-    <p><strong>Learned:</strong> Routing, component structure, deployment to GitHub Pages</p>
+
+    <p>
+      A simple portfolio site built with Angular to showcase coursework, a resume download, and client-side routing.
+    </p>
+    <p><strong>Tech:</strong> Angular, TypeScript, HTML, CSS</p>
+    <p><strong>Focus:</strong> Component structure, routing, deployment</p>
+
     <p>
       <a href="https://github.com/ChrisNewelldev/portfolio" target="_blank" rel="noopener noreferrer">
         GitHub Repository
@@ -26,13 +42,25 @@
 
   <div class="project">
     <h2>RPG Character Builder</h2>
-    <p>
-      A Node.js-based character creation utility that reads/writes character data and supports iterative development with automated tests.
+
+    <p class="tags">
+      <span class="tag">Node.js</span>
+      <span class="tag">File I/O</span>
+      <span class="tag">Testing</span>
     </p>
-    <p><strong>Tech:</strong> Node.js, JavaScript, fs, async file operations, (TDD) testing</p>
-    <p><strong>Learned:</strong> Building testable modules, file I/O, asynchronous patterns, and keeping project structure clean</p>
+
     <p>
-      <a href="https://github.com/ChrisNewelldev/web-425/tree/main/rpg-character-builder" target="_blank" rel="noopener noreferrer">
+      A Node.js-based character creation utility that reads and writes character data using asynchronous file operations.
+    </p>
+    <p><strong>Tech:</strong> Node.js, JavaScript, fs</p>
+    <p><strong>Focus:</strong> Modular design, testable code, async patterns</p>
+
+    <p>
+      <a
+        href="https://github.com/ChrisNewelldev/web-425/tree/main/rpg-character-builder"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Project Folder (GitHub)
       </a>
     </p>
@@ -40,11 +68,19 @@
 
   <div class="project">
     <h2>API Data Viewer (Coursework)</h2>
+
+    <p class="tags">
+      <span class="tag">APIs</span>
+      <span class="tag">Async</span>
+      <span class="tag">JavaScript</span>
+    </p>
+
     <p>
       A small web application built during coursework to practice fetching and displaying data from public APIs.
     </p>
-    <p><strong>Tech:</strong> JavaScript, REST APIs, HTML, CSS</p>
-    <p><strong>Learned:</strong> Making API requests, handling asynchronous data, and presenting results clearly</p>
+    <p><strong>Tech:</strong> JavaScript, REST APIs</p>
+    <p><strong>Focus:</strong> Async data handling and UI presentation</p>
+
     <p>
       <a href="https://github.com/ChrisNewelldev/web-330" target="_blank" rel="noopener noreferrer">
         Course Repository (GitHub)
@@ -54,11 +90,19 @@
 
   <div class="project">
     <h2>Restaurant Reservation Webpage</h2>
+
+    <p class="tags">
+      <span class="tag">DOM</span>
+      <span class="tag">Callbacks</span>
+      <span class="tag">Responsive UI</span>
+    </p>
+
     <p>
       A responsive reservation page built to practice JavaScript callbacks and DOM interactions.
     </p>
-    <p><strong>Tech:</strong> HTML, CSS, JavaScript (callbacks)</p>
-    <p><strong>Learned:</strong> Wiring UI behavior with callback-based logic, validating inputs, and improving UX with clear feedback</p>
+    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+    <p><strong>Focus:</strong> UI behavior and user feedback</p>
+
     <p>
       <a href="https://github.com/ChrisNewelldev/web-330" target="_blank" rel="noopener noreferrer">
         Course Repository (GitHub)
