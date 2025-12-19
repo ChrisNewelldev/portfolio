@@ -1,30 +1,68 @@
-<!--
-  Author: Chris Newell
-  Date: 2025-12-19
-  File: projects.component.html
--->
-
 <section>
   <h1>Projects</h1>
 
-  <div class="grid">
-    @for (p of projects; track p.name) {
-      <article class="card">
-        <h2>{{ p.name }}</h2>
-        <p>{{ p.description }}</p>
+  <p>
+    Selected coursework and portfolio projects completed as part of my B.S. in Web Development program at Bellevue University.
+  </p>
+  <p>Note: Some coursework projects are organized within course repositories; links may point to a specific project folder within a repo.</p>
 
-        <p class="meta"><strong>Tech:</strong> {{ p.technologies.join(', ') }}</p>
-        <p class="meta"><strong>What I learned:</strong> {{ p.learned }}</p>
+  <div class="project">
+    <h2>Personal Portfolio (Angular)</h2>
+    <p>
+      A simple portfolio site built with Angular to showcase coursework, a resume download, and basic routing.
+    </p>
+    <p><strong>Tech:</strong> Angular, TypeScript, HTML, CSS, GitHub Pages</p>
+    <p><strong>Learned:</strong> Routing, component structure, deployment to GitHub Pages</p>
+    <p>
+      <a href="https://github.com/ChrisNewelldev/portfolio" target="_blank" rel="noopener noreferrer">
+        GitHub Repository
+      </a>
+      &nbsp;|&nbsp;
+      <a href="https://chrisnewelldev.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
+        Live Site
+      </a>
+    </p>
+  </div>
 
-        <div class="links">
-          @if (p.repoUrl) {
-            <a [href]="p.repoUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
-          }
-          @if (p.liveUrl) {
-            <a [href]="p.liveUrl" target="_blank" rel="noopener noreferrer">Live</a>
-          }
-        </div>
-      </article>
-    }
+  <div class="project">
+    <h2>RPG Character Builder</h2>
+    <p>
+      A Node.js-based character creation utility that reads/writes character data and supports iterative development with automated tests.
+    </p>
+    <p><strong>Tech:</strong> Node.js, JavaScript, fs, async file operations, (TDD) testing</p>
+    <p><strong>Learned:</strong> Building testable modules, file I/O, asynchronous patterns, and keeping project structure clean</p>
+    <p>
+      <a href="https://github.com/ChrisNewelldev/web-425/tree/main/rpg-character-builder" target="_blank" rel="noopener noreferrer">
+        Project Folder (GitHub)
+      </a>
+    </p>
+  </div>
+
+  <div class="project">
+    <h2>API Data Viewer (Coursework)</h2>
+    <p>
+      A small web application built during coursework to practice fetching and displaying data from public APIs.
+    </p>
+    <p><strong>Tech:</strong> JavaScript, REST APIs, HTML, CSS</p>
+    <p><strong>Learned:</strong> Making API requests, handling asynchronous data, and presenting results clearly</p>
+    <p>
+      <a href="https://github.com/ChrisNewelldev/web-330" target="_blank" rel="noopener noreferrer">
+        Course Repository (GitHub)
+      </a>
+    </p>
+  </div>
+
+  <div class="project">
+    <h2>Restaurant Reservation Webpage</h2>
+    <p>
+      A responsive reservation page built to practice JavaScript callbacks and DOM interactions.
+    </p>
+    <p><strong>Tech:</strong> HTML, CSS, JavaScript (callbacks)</p>
+    <p><strong>Learned:</strong> Wiring UI behavior with callback-based logic, validating inputs, and improving UX with clear feedback</p>
+    <p>
+      <a href="https://github.com/ChrisNewelldev/web-330" target="_blank" rel="noopener noreferrer">
+        Course Repository (GitHub)
+      </a>
+    </p>
   </div>
 </section>
