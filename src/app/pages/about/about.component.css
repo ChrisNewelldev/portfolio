@@ -1,0 +1,15 @@
+/*
+  Author: Chris Newell
+  Date: 2025-12-19
+  File: about.component.css
+*/
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  margin: 12px 0 16px;
+  border: 1px solid #e8e8e8;
+}

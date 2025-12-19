@@ -1,0 +1,30 @@
+<!--
+  Author: Chris Newell
+  Date: 2025-12-19
+  File: projects.component.html
+-->
+
+<section>
+  <h1>Projects</h1>
+
+  <div class="grid">
+    @for (p of projects; track p.name) {
+      <article class="card">
+        <h2>{{ p.name }}</h2>
+        <p>{{ p.description }}</p>
+
+        <p class="meta"><strong>Tech:</strong> {{ p.technologies.join(', ') }}</p>
+        <p class="meta"><strong>What I learned:</strong> {{ p.learned }}</p>
+
+        <div class="links">
+          @if (p.repoUrl) {
+            <a [href]="p.repoUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+          }
+          @if (p.liveUrl) {
+            <a [href]="p.liveUrl" target="_blank" rel="noopener noreferrer">Live</a>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

@@ -1,0 +1,28 @@
+/*
+  Author: Chris Newell
+  Date: 2025-12-19
+  File: projects.component.css
+*/
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.card {
+  border: 1px solid #e8e8e8;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.meta {
+  opacity: 0.9;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
